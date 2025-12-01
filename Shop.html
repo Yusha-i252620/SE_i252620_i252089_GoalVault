@@ -234,16 +234,19 @@
   <!-- SHOP SCRIPT -->
   <script>
     const products = [
-      { title: "1986 World Cup Trophy Replica", price: "$599.99", img: "https://lh3.googleusercontent.com/gg-dl/ABS2GSllSVe7PqpRerQGUyp-FmXqGO5tVKbnzHLJKqUqgqdUESkcvjgJZys6mOPoeceGfu6TCEMe8xYZoDRFAwlapAV0F4eq70sRxvMlkVmUQiZIzQLdQKXl3VjVxr-aBGUGtzqNjlOPyiLxgl_s9JjvLwVstgVGEmId_So1r0xUnLwmHGWK=s1024-rj" },
-      { title: "Vintage Match Ball Collection", price: "$999.67", img: "https://lh3.googleusercontent.com/gg-dl/ABS2GSltrs8a46UzRYPXv1PWJhGBM2I0B8ZyJygaNP1lorp3uhVoKyz_7IH0MgLdiK76K6r8uCgZNCozYTtMqDq7hRkxHUyodW0bHNm8M0xncQYkTt6bdQWQjWGFQXf9LCAeex3krpcaByGsHmt9BRu2ZFKcQvzZurB2naR_lQybrm0A_kp6Xg=s1024-rj" },
-      { title: "Vintage Football Shirt", price: "$89.99", img: "https://lh3.googleusercontent.com/gg-dl/ABS2GSmGA3v4ehdRqhvS-EMQgy1OIX437nf4j31oPiIposkBOE_fy85LNwQVnpcohxjyGIGsJ8ZOMyla6t4JNDC7ZsMBwg6yimuF2m_4EhGWfa1-dpfpR8fgoZPDXEhXlmjBTSRtsQUYRlNcPHmbg3RQ8vWx8A3jVtaq9Mu_xF7m-IPXxhW56g=s1024-rj" },
-      { title: "Premier League Match Ball 1998", price: "$149.99", img: "https://lh3.googleusercontent.com/gg-dl/ABS2GSmMK56gHKwTQpuYxE864vquR55Tm7GrBZjamxrHBt7at19-VWk_Lhj8x3OQ_T9nu3g2M8xemKY67-EiLbWV0Dp4hfpVJzX6LXzS6OpND6U4ZYkgRKcwevy66a56Us52vG2TC-iiYb77XFgW1tI2-lF9oKCtpJZrfM3Bhr4HouHAEwc9Yw=s1024-rj" },
-      { title: "Classic Goalkeeper Gloves", price: "$79.99", img: "https://lh3.googleusercontent.com/gg-dl/ABS2GSm_vkTqk4f8sbMCKYpPYRBuXpeU_nzFxK9yJwxrD0oLpEATy98NLhhPwQ__wH4Skl06si3_S8ICw2l2uRXvDjavo2dxjGymhuxuZ-5GQAYm_AE17CoXpHLRwWpL-Vju2iL2e7XMmvonyQDPLFVTX71eoqqAA_xozx4gzH3H0MtS-qHxbA=s1024-rjs" },
-      { title: "Football Boots 1980 Edition", price: "$249.99", img: "https://lh3.googleusercontent.com/gg-dl/ABS2GSnTg-jN9oMy56br-cOrI56cJwlwG_A0RV5RYxff1IhecqqP3U0ugQJH6eOcbwT22umtrUGm3Wo3R4Y17fV2ItwXEj6yFMOaBjVUJqvs8rDeTMXdmZ7twJos_JqdYofUuO1L5J81ECBm-_Di81P-2bgpb27gzVUjL8tUtIiCESPAxWhPow=s1024-rj" },
-      { title: "Retro Team Scarf", price: "$39.99", img: "https://lh3.googleusercontent.com/gg-dl/ABS2GSkofbtFZEVZUmgDLW5GBNdSbkfxYnQEn729Rj2NOKkCpB2IYeJqjvSJ_vo2o-1_rTnJ-ZIV4jQkrxoBvigyy4vtv6JbzVh8aupnK7ALkHbaClccm7wPMOvsgJx4AgFaQk6VMrRPR_5yICWmEaGkkwkAj3Mh6xCUTzpcUxY9FTZmkkwZoQ=s1024-rj" },
-      { title: "Signed Legend Player Card", price: "$129.99", img: "https://lh3.googleusercontent.com/gg-dl/ABS2GSnINuLHHrS1U5Mn2jx4gmGnphKEozzDCCzIOqqrVyxk-6oMWVMWfaYKaVl4npJmEzsx4m7wcTEwfpXAI0y6lcXrgwVN_83FIJply_YLJ1G9GCwv00SSQziOhs7avg_1RsTX5buZsU9vzWpxfB2F6pT6kLoVU3__zPRQQk4W_SURfw4JLw=s1024-rj" }
-    ];
-
+       { title: "1986 World Cup Trophy Replica", price: "$599.99", img: "https://lh3.googleusercontent.com/gg-dl/ABS2GSllSVe7PqpRerQGUyp-FmXqGO5tVKbnzHLJKqUqgqdUESkcvjgJZys6mOPoeceGfu6TCEMe8xYZoDRFAwlapAV0F4eq70sRxvMlkVmUQiZIzQLdQKXl3VjVxr-aBGUGtzqNjlOPyiLxgl_s9JjvLwVstgVGEmId_So1r0xUnLwmHGWK=s1024-rj" },
+    { title: "Vintage Match Ball Collection", price: "$999.67", img: "https://lh3.googleusercontent.com/gg-dl/ABS2GSltrs8a46UzRYPXv1PWJhGBM2I0B8ZyJygaNP1lorp3uhVoKyz_7IH0MgLdiK76K6r8uCgZNCozYTtMqDq7hRkxHUyodW0bHNm8M0xncQYkTt6bdQWQjWGFQXf9LCAeex3krpcaByGsHmt9BRu2ZFKcQvzZurB2naR_lQybrm0A_kp6Xg=s1024-rj" },
+    { title: "Vintage Football Shirt", price: "$89.99", img: "https://chatgpt.com/backend-api/estuary/content?id=file_00000000e3a87209a0a52c26f24a7c78&ts=490168&p=fs&cid=1&sig=b21cbaf598c3e2b1fafeb66101267840caaee6dc0dc200f6a53b8f99c032a5b2&v=0" },
+    { title: "Premier League Match Ball 1998", price: "$149.99", img: "https://lh3.googleusercontent.com/gg-dl/ABS2GSmMK56gHKwTQpuYxE864vquR55Tm7GrBZjamxrHBt7at19-VWk_Lhj8x3OQ_T9nu3g2M8xemKY67-EiLbWV0Dp4hfpVJzX6LXzS6OpND6U4ZYkgRKcwevy66a56Us52vG2TC-iiYb77XFgW1tI2-lF9oKCtpJZrfM3Bhr4HouHAEwc9Yw=s1024-rj" },
+    { title: "Classic Goalkeeper Gloves", price: "$79.99", img: "https://lh3.googleusercontent.com/gg-dl/ABS2GSm_vkTqk4f8sbMCKYpPYRBuXpeU_nzFxK9yJwxrD0oLpEATy98NLhhPwQ__wH4Skl06si3_S8ICw2l2uRXvDjavo2dxjGymhuxuZ-5GQAYm_AE17CoXpHLRwWpL-Vju2iL2e7XMmvonyQDPLFVTX71eoqqAA_xozx4gzH3H0MtS-qHxbA=s1024-rjs" },
+    { title: "Football Boots 1980 Edition", price: "$249.99", img: "https://lh3.googleusercontent.com/gg-dl/ABS2GSnTg-jN9oMy56br-cOrI56cJwlwG_A0RV5RYxff1IhecqqP3U0ugQJH6eOcbwT22umtrUGm3Wo3R4Y17fV2ItwXEj6yFMOaBjVUJqvs8rDeTMXdmZ7twJos_JqdYofUuO1L5J81ECBm-_Di81P-2bgpb27gzVUjL8tUtIiCESPAxWhPow=s1024-rj" },
+    { title: "Retro Team Scarf", price: "$39.99", img: "https://lh3.googleusercontent.com/gg-dl/ABS2GSkofbtFZEVZUmgDLW5GBNdSbkfxYnQEn729Rj2NOKkCpB2IYeJqjvSJ_vo2o-1_rTnJ-ZIV4jQkrxoBvigyy4vtv6JbzVh8aupnK7ALkHbaClccm7wPMOvsgJx4AgFaQk6VMrRPR_5yICWmEaGkkwkAj3Mh6xCUTzpcUxY9FTZmkkwZoQ=s1024-rj" },
+    { title: "Signed Legend Player Card", price: "$129.99", img: "https://lh3.googleusercontent.com/gg-dl/ABS2GSnINuLHHrS1U5Mn2jx4gmGnphKEozzDCCzIOqqrVyxk-6oMWVMWfaYKaVl4npJmEzsx4m7wcTEwfpXAI0y6lcXrgwVN_83FIJply_YLJ1G9GCwv00SSQziOhs7avg_1RsTX5buZsU9vzWpxfB2F6pT6kLoVU3__zPRQQk4W_SURfw4JLw=s1024-rj" },
+    { title: "UCL Trophy Replica", price: "$399.99", img: "https://lh3.googleusercontent.com/gg-dl/ABS2GSlLicdHLqyLtFVEGZXAbOdOa-CR0ndD2L066MdLZKh65dm6LjqXMgR_Y74dOZr5Okf2XIkoDmsH2Ybwj1EcA4PG7KssGlsSEUaV7bIqr10gxSNz51zu8Xu74K1kDUG5fJj3UuI2A0ZcB04Y3GEYRdXoSuU356FiwHDDj7D7Ut9IxAb8oA=s1024-rj" },
+    { title: "Signed Football Shirt", price: "$159.99", img: "https://lh3.googleusercontent.com/gg-dl/ABS2GSrSignedJerseyPlaceholder=s1024-rj" },
+    { title: "Signed Football Shirt", price: "$159.99", img: "https://lh3.googleusercontent.com/gg-dl/ABS2GSrSignedJerseyPlaceholder=s1024-rj" }
+     
+];
     let currentPage = 1;
     const itemsPerPage = 3;
 
