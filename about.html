@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About GoalVault</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #3327a1, #5548c9, #6758f1);
+      color: white;
+    }
+
+    /* Header */
+    header {
+      background: #2a2086;
+      padding: 20px;
+      border-bottom: 4px solid gold;
+    }
+    header .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    header img {
+      height: 80px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 18px;
+      color: gold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: white;
+    }
+    nav a:first-child {
+      color: white;
+    }
+    .search {
+      background: white;
+      border-radius: 50px;
+      padding: 10px 20px;
+      width: 250px;
+      margin: 10px 0;
+    }
+    .search input {
+      border: none;
+      outline: none;
+      width: 100%;
+    }
+    .icons button {
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: gold;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    /* Main Content */
+    .about {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .about h1 {
+      font-size: 48px;
+      color: gold;
+      margin-bottom: 10px;
+    }
+    .about h2 {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+    .about p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    /* Founders Image */
+    .founders-img {
+      max-width: 600px;
+      margin: 30px auto;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+    .founders-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+    }
+
+    /* Quote Box */
+    .quote-box {
+      background: gold;
+      color: black;
+      padding: 20px;
+      border-radius: 10px;
+      font-style: italic;
+      font-size: 16px;
+      max-width: 800px;
+      margin: 40px auto;
+    }
+
+    /* Footer */
+    footer {
+      background: #3327a1;
+      padding: 40px 20px;
+      border-top: 4px solid gold;
+      margin-top: 60px;
+    }
+    footer .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
+    footer h3, footer h4 {
+      color: gold;
+      margin-bottom: 15px;
+    }
+    footer p, footer li, footer a {
+      color: white;
+      font-size: 16px;
+      text-decoration: none;
+    }
+    footer ul {
+      list-style: none;
+      padding: 0;
+    }
+    .social a {
+      font-size: 24px;
+      margin-right: 10px;
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .social a:hover {
+      color: gold;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      header .container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .search {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <img src="logo.png" alt="GoalVault Logo" />
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+      <div class="search">
+        <input type="text" placeholder="Search Collectibles..." />
+      </div>
+      <div class="icons">
+        <button>🛒</button>
+        <button>👤</button>
+        <button>❤️</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section class="about">
+    <h1>About GoalVault</h1>
+    <h2>Your trusted source for authentic football</h2>
+    <p>
+      It all started one lazy Sunday while arguing over old World Cup matches and whether vintage jerseys were cooler than modern ones. We realized fans like us were missing a way to actually own football history instead of just scrolling through endless highlights. So we grabbed a notebook, a couple of coffee cups, and way too many snacks, and started sketching out what would become GoalVault.
+    </p>
+    <p>
+      Our goal was simple: create a place where fans could collect real memorabilia, from jerseys and posters to replica trophies and football cards, and also explore the stories behind the greatest matches. Every item has a history, every collectible a story, and every fan a chance to feel like part of the action.
+    </p>
+    <p>
+      Now, GoalVault is where football nostalgia meets the thrill of collecting. We're still arguing over who was the best striker ever, but at least now we can do it while browsing the coolest World Cup collectibles on the planet.
+    </p>
+
+    <!-- Founders Image -->
+    <div class="founders-img">
+      <img src="images/founders.jpeg" alt="GoalVault Founders" />
+    </div>
+
+    <!-- Quote Box -->
+    <div class="quote-box">
+      “The idea for GoalVault was born right here, two football fanatics crammed into one corner, laughing, brainstorming, and accidentally building something big. What started as a random chat about FIFA merch turned into an e-commerce vision to bring every fan closer to the game. Sometimes the best ideas come from the most chaotic (and cramped!) moments.”
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div>
+        <h3>GoalVault</h3>
+        <p>Buy A Piece Of Footballing History</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact Us</h4>
+        <ul>
+          <li>i252620@isb.nu.edu.pk</li>
+          <li>i252089@isb.nu.edu.pk</li>
+          <li>0332 9333641</li>
+          <li>0349 5013377</li>
+          <li>FAST University Islamabad</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <div class="social">
+          <a href="#">📷</a>
+          <a href="#">🐦</a>
+          <a href="#">📘</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
