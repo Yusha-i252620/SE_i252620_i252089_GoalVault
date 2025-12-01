@@ -24,10 +24,15 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
+      gap: 16px;
     }
-    header img {
-      height: 80px;
+
+    header .header-logo {
+      width: 110px;
+      height: auto;
+      display: block;
+      margin-right: 8px;
     }
     nav a {
       margin: 0 15px;
@@ -35,7 +40,7 @@
       font-size: 18px;
       color: gold;
     }
-    nav a:first-child {
+    nav a.active {
       color: white;
     }
     .search {
@@ -57,6 +62,14 @@
       color: gold;
       cursor: pointer;
       margin-left: 10px;
+    }
+
+    /* Responsive: allow header to wrap on narrow screens */
+    @media (max-width: 820px) {
+      header .container { flex-wrap: wrap; }
+      nav { order: 3; width: 100%; text-align: center; margin-top: 8px; }
+      .search { order: 2; width: 100%; margin: 8px 0; }
+      .icons { order: 4; width: 100%; text-align: center; margin-top: 8px; }
     }
 
     /* Checkout Section */
@@ -196,19 +209,20 @@
   <!-- Header -->
   <header>
     <div class="container">
-      <img src="images/logo.png" alt="GoalVault Logo" />
+      <img src="images/logo2.png" alt="GoalVault Logo" class="header-logo" />
       <nav>
-        <a href="#">Home</a>
-        <a href="#">Shop</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="Shop.html">Shop</a>
+        <a href="productlisting.html">Listing</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
       </nav>
       <div class="search">
         <input type="text" placeholder="Search Collectibles..." />
       </div>
       <div class="icons">
-        <button>🛒</button>
-        <button>👤</button>
+        <a href="shopcart.html"><button>🛒</button></a>
+        <a href="loginpage.html"><button>👤</button></a>
         <button>❤️</button>
       </div>
     </div>
@@ -248,7 +262,7 @@
             <option value="">Select Gender</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
-            <option value="nonbinary">Non-binary</option>
+            <option value="mentally ill">Mentally ill</option>
             <option value="attack-helicopter">Attack Helicopter</option>
             <option value="other">Other</option>
           </select>
@@ -321,10 +335,10 @@
       <div>
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Shop</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="Shop.html">Shop</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div>
@@ -347,6 +361,21 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Highlight active nav link based on current page
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('nav a');
+      const currentPage = window.location.pathname.split('/').pop();
+      
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>

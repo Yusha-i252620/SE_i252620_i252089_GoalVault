@@ -28,8 +28,11 @@
       justify-content: space-between;
     }
     header img {
-      height: 80px;
+      width: 220px;
+      height: auto;
     }
+    /* hero logo removed; use text site-title */
+    .header-logo { width: 110px; height: auto; }
     nav a {
       margin: 0 15px;
       text-decoration: none;
@@ -37,6 +40,9 @@
       color: gold;
     }
     nav a:first-child {
+      color: white;
+    }
+    nav a.active {
       color: white;
     }
 
@@ -63,36 +69,42 @@
       margin-left: 10px;
     }
 
-    /* Hero section */
+    /* Hero section (simple) */
     main {
       text-align: center;
       padding: 100px 20px;
     }
+
     main h1 {
       color: gold;
       font-size: 60px;
-      margin-bottom: 20px;
+      margin: 18px 0 10px;
+      line-height: 1.05;
     }
+
     main p {
       font-size: 20px;
       max-width: 800px;
-      margin: 0 auto 40px;
+      margin: 0 auto 24px;
+      color: rgba(255,244,200,0.95);
     }
+
+    .buttons {
+      display: inline-flex;
+      gap: 12px;
+    }
+
     .buttons button {
-      padding: 15px 30px;
+      padding: 12px 26px;
       border-radius: 10px;
-      font-size: 18px;
-      margin: 0 10px;
+      font-size: 16px;
       cursor: pointer;
+      border: none;
+      font-weight: 700;
     }
-    .buttons .shop {
-      background: gold;
-      color: black;
-    }
-    .buttons .learn {
-      background: white;
-      color: black;
-    }
+
+    .buttons .shop { background: gold; color: black; }
+    .buttons .learn { background: white; color: black; }
 
     /* Featured Products */
     .featured {
@@ -181,29 +193,28 @@
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header>
     <div class="container">
-      <img src="logo.png" alt="GoalVault Logo" />
+      <img src="images/logo2.png" alt="GoalVault Logo" class="header-logo" />
       <nav>
-        <a href="#">Home</a>
-        <a href="#">Shop</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-      </nav>
+  <a href="index.html">Home</a>
+  <a href="Shop.html">Shop</a>
+  <a href="productlisting.html">Listing</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
       <div class="search">
         <input type="text" placeholder="Search Collectibles..." />
       </div>
       <div class="icons">
-        <button>🛒</button>
-        <button>👤</button>
+        <a href="shopcart.html"><button>🛒</button></a>
+        <a href="loginpage.html"><button>👤</button></a>
         <button>❤️</button>
       </div>
     </div>
   </header>
-
-  <!-- Hero Section -->
   <main>
+    <!-- hero logo removed per request -->
     <h1>Premium FIFA World Cup Collectibles</h1>
     <p>
       Own a piece of football history. Discover our exclusive collection of authenticated
@@ -215,7 +226,7 @@
     </div>
   </main>
 
-  <!-- Featured Products -->
+  
   <section class="featured">
     <h2>Featured Collectibles</h2>
     <div class="product-grid">
@@ -240,7 +251,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
       <div>
@@ -250,10 +260,10 @@
       <div>
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Shop</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="Shop.html">Shop</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div>
@@ -276,5 +286,20 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Highlight active nav link based on current page
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('nav a');
+      const currentPage = window.location.pathname.split('/').pop();
+      
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>

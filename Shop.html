@@ -2,52 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, inital-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GoalVault – Shop</title>
 
   <style>
+    /* Global styles */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #3b2bb8; 
+      min-height: 100vh;
+      background: linear-gradient(to bottom right, #3327a1, #5548c9, #6758f1);
       color: white;
     }
 
-   
+    /* Header */
     header {
-      background-color: #3b2bb8;
-      border-bottom: 4px solid #f7d000;
-      padding: 20px 50px;
+      background: #2a2086;
+      padding: 20px;
+      border-bottom: 4px solid gold;
+    }
+    header .container {
+      max-width: 1200px;
+      margin: 0 auto;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     }
-
-    .logo {
-      font-size: 28px;
-      font-weight: bold;
+    header img {
+      width: 110px;
+      height: auto;
     }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-    }
-
-    nav ul li a {
-      color: white;
+    nav a {
+      margin: 0 15px;
       text-decoration: none;
-      font-size: 16px;
+      font-size: 18px;
+      color: gold;
+    }
+    nav a.active {
+      color: white;
     }
 
-    .search-box {
+    /* Search bar */
+    .search {
       background: white;
-      padding: 8px 15px;
-      border-radius: 20px;
+      border-radius: 50px;
+      padding: 10px 20px;
       width: 250px;
+    }
+    .search input {
       border: none;
       outline: none;
-      color: black;
+      width: 100%;
+    }
+
+    /* Icons */
+    .icons button {
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: gold;
+      cursor: pointer;
+      margin-left: 10px;
     }
 
     h1 {
@@ -55,9 +70,9 @@
       margin-top: 40px;
       font-size: 34px;
       text-transform: uppercase;
+      color: gold;
     }
 
-  
     .products {
       width: 85%;
       margin: 40px auto;
@@ -67,11 +82,16 @@
     }
 
     .card {
-      background-color: #2f23a3;
-      border: 3px solid #1ca4e8;
+      background-color: rgba(255,255,255,0.1);
+      border: 2px solid gold;
       padding: 20px;
       border-radius: 12px;
       text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
     }
 
     .card img {
@@ -84,10 +104,11 @@
     .card-title {
       font-size: 18px;
       margin-top: 10px;
+      color: gold;
     }
 
     .price {
-      color: #f7d000;
+      color: gold;
       font-weight: bold;
       font-size: 18px;
     }
@@ -95,13 +116,46 @@
     .add-cart {
       margin-top: 12px;
       padding: 10px;
-      background-color: #f7d000;
+      background-color: gold;
       color: black;
       border-radius: 6px;
       cursor: pointer;
+      font-weight: bold;
     }
 
-    
+    .sold-out {
+      background: red;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: default;
+      display: inline-block;
+    }
+
+    .featured {
+      width: 85%;
+      margin: 40px auto;
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      background: rgba(255,255,255,0.06);
+      padding: 25px;
+      border-radius: 12px;
+      border: 2px solid gold;
+    }
+
+    .featured img {
+      width: 360px;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+    }
+
+    .ai-label { font-size: 12px; color: gold; margin-top: 6px; opacity: 0.9; }
+
     .pagination {
       text-align: center;
       margin: 30px 0;
@@ -112,7 +166,7 @@
       margin: 0 5px;
       border: none;
       border-radius: 6px;
-      background-color: #f7d000;
+      background-color: gold;
       cursor: pointer;
       font-weight: bold;
     }
@@ -121,94 +175,107 @@
       background-color: white;
       color: black;
     }
+
+    /* Footer */
     footer {
-      background-color: #3b2bb8;
-      padding: 40px 0;
-      border-top: 4px solid #f7d000;
-      margin-top: 80px;
+      background: #3327a1;
+      padding: 50px 20px;
+      border-top: 4px solid gold;
+      margin-top: 100px;
     }
-
     footer .container {
-      width: 85%;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
     }
-
     footer h3, footer h4 {
-      margin-bottom: 10px;
+      color: gold;
+      margin-bottom: 15px;
     }
-
+    footer p, footer li, footer a {
+      color: white;
+      font-size: 16px;
+      text-decoration: none;
+    }
     footer ul {
       list-style: none;
       padding: 0;
     }
-
-    footer ul li, footer a {
-      color: white;
-      font-size: 14px;
-      line-height: 22px;
-    }
-
     .social a {
-      font-size: 28px;
+      font-size: 24px;
       margin-right: 10px;
+      color: white;
       text-decoration: none;
     }
-
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
+  <!-- Header -->
   <header>
-    <div class="logo">GOALVAULT</div>
-
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Shop</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-
-    <input type="text" class="search-box" placeholder="Search Collectibles...">
+    <div class="container">
+      <img src="images/logo2.png" alt="GoalVault Logo" class="header-logo" />
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="Shop.html">Shop</a>
+        <a href="productlisting.html">Listing</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="search">
+        <input type="text" placeholder="Search Collectibles..." />
+      </div>
+      <div class="icons">
+        <a href="shopcart.html"><button>🛒</button></a>
+        <a href="loginpage.html"><button>👤</button></a>
+        <button>❤️</button>
+      </div>
+    </div>
   </header>
 
-  <!-- SHOP TITLE -->
+  <!-- Shop Title -->
   <h1>Buy A Piece Of Footballing History</h1>
 
-  <!-- PRODUCT GRID -->
+  <!-- Product Grid -->
   <div id="product-container" class="products"></div>
 
-  <!-- PAGINATION -->
+  <!-- Featured Sold-Out Item (moved from product listing) -->
+  <section id="featured-sold" class="featured">
+    <img src="images/vintagecard.jpeg" alt="Rare Vintage Player Card">
+    <div class="info">
+      <p class="ai-label">AI Generated Image</p>
+      <h2 style="color:gold; margin-top:6px;">Rare Vintage Player Card</h2>
+      <button class="sold-out" disabled>Sold Out</button>
+      <p style="color:#ddd; margin-top:12px; line-height:1.5;">An exceptionally rare vintage player card featuring one of football's all-time greats. A true treasure for serious collectors.</p>
+    </div>
+  </section>
+
+  <!-- Pagination -->
   <div class="pagination">
     <button onclick="changePage(1)" id="page1">1</button>
     <button onclick="changePage(2)" id="page2">2</button>
     <button onclick="changePage(3)" id="page3">3</button>
   </div>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer>
     <div class="container">
       <div>
         <h3>GoalVault</h3>
         <p>Buy A Piece Of Footballing History</p>
       </div>
-
       <div>
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Shop</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="Shop.html">Shop</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
-
       <div>
         <h4>Contact Us</h4>
         <ul>
@@ -219,7 +286,6 @@
           <li>FAST University Islamabad</li>
         </ul>
       </div>
-
       <div>
         <h4>Follow Us</h4>
         <div class="social">
@@ -234,14 +300,15 @@
   <!-- SHOP SCRIPT -->
   <script>
     const products = [
-      { title: "1986 World Cup Trophy Replica", price: "$599.99", img: "https://lh3.googleusercontent.com/gg-dl/ABS2GSllSVe7PqpRerQGUyp-FmXqGO5tVKbnzHLJKqUqgqdUESkcvjgJZys6mOPoeceGfu6TCEMe8xYZoDRFAwlapAV0F4eq70sRxvMlkVmUQiZIzQLdQKXl3VjVxr-aBGUGtzqNjlOPyiLxgl_s9JjvLwVstgVGEmId_So1r0xUnLwmHGWK=s1024-rj" },
-      { title: "Vintage Match Ball Collection", price: "$999.67", img: "https://lh3.googleusercontent.com/gg-dl/ABS2GSltrs8a46UzRYPXv1PWJhGBM2I0B8ZyJygaNP1lorp3uhVoKyz_7IH0MgLdiK76K6r8uCgZNCozYTtMqDq7hRkxHUyodW0bHNm8M0xncQYkTt6bdQWQjWGFQXf9LCAeex3krpcaByGsHmt9BRu2ZFKcQvzZurB2naR_lQybrm0A_kp6Xg=s1024-rj" },
-      { title: "Vintage Football Shirt", price: "$89.99", img: "https://lh3.googleusercontent.com/gg-dl/ABS2GSmGA3v4ehdRqhvS-EMQgy1OIX437nf4j31oPiIposkBOE_fy85LNwQVnpcohxjyGIGsJ8ZOMyla6t4JNDC7ZsMBwg6yimuF2m_4EhGWfa1-dpfpR8fgoZPDXEhXlmjBTSRtsQUYRlNcPHmbg3RQ8vWx8A3jVtaq9Mu_xF7m-IPXxhW56g=s1024-rj" },
-      { title: "Premier League Match Ball 1998", price: "$149.99", img: "https://lh3.googleusercontent.com/gg-dl/ABS2GSmMK56gHKwTQpuYxE864vquR55Tm7GrBZjamxrHBt7at19-VWk_Lhj8x3OQ_T9nu3g2M8xemKY67-EiLbWV0Dp4hfpVJzX6LXzS6OpND6U4ZYkgRKcwevy66a56Us52vG2TC-iiYb77XFgW1tI2-lF9oKCtpJZrfM3Bhr4HouHAEwc9Yw=s1024-rj" },
-      { title: "Classic Goalkeeper Gloves", price: "$79.99", img: "https://lh3.googleusercontent.com/gg-dl/ABS2GSm_vkTqk4f8sbMCKYpPYRBuXpeU_nzFxK9yJwxrD0oLpEATy98NLhhPwQ__wH4Skl06si3_S8ICw2l2uRXvDjavo2dxjGymhuxuZ-5GQAYm_AE17CoXpHLRwWpL-Vju2iL2e7XMmvonyQDPLFVTX71eoqqAA_xozx4gzH3H0MtS-qHxbA=s1024-rjs" },
-      { title: "Football Boots 1980 Edition", price: "$249.99", img: "https://lh3.googleusercontent.com/gg-dl/ABS2GSnTg-jN9oMy56br-cOrI56cJwlwG_A0RV5RYxff1IhecqqP3U0ugQJH6eOcbwT22umtrUGm3Wo3R4Y17fV2ItwXEj6yFMOaBjVUJqvs8rDeTMXdmZ7twJos_JqdYofUuO1L5J81ECBm-_Di81P-2bgpb27gzVUjL8tUtIiCESPAxWhPow=s1024-rj" },
-      { title: "Retro Team Scarf", price: "$39.99", img: "https://lh3.googleusercontent.com/gg-dl/ABS2GSkofbtFZEVZUmgDLW5GBNdSbkfxYnQEn729Rj2NOKkCpB2IYeJqjvSJ_vo2o-1_rTnJ-ZIV4jQkrxoBvigyy4vtv6JbzVh8aupnK7ALkHbaClccm7wPMOvsgJx4AgFaQk6VMrRPR_5yICWmEaGkkwkAj3Mh6xCUTzpcUxY9FTZmkkwZoQ=s1024-rj" },
-      { title: "Signed Legend Player Card", price: "$129.99", img: "https://lh3.googleusercontent.com/gg-dl/ABS2GSnINuLHHrS1U5Mn2jx4gmGnphKEozzDCCzIOqqrVyxk-6oMWVMWfaYKaVl4npJmEzsx4m7wcTEwfpXAI0y6lcXrgwVN_83FIJply_YLJ1G9GCwv00SSQziOhs7avg_1RsTX5buZsU9vzWpxfB2F6pT6kLoVU3__zPRQQk4W_SURfw4JLw=s1024-rj" }
+      { title: "1986 World Cup Trophy Replica", price: "$599.99", img: "images/trophy.jpg" },
+      { title: "Vintage Match Ball Collection", price: "$999.67", img: "images/football.jpeg" },
+      { title: "Vintage Football Shirt", price: "$89.99", img: "images/jersey.jpeg" },
+      { title: "Premier League Match Ball 1998", price: "$149.99", img: "images/football2.jpeg" },
+      { title: "Classic Goalkeeper Gloves", price: "$79.99", img: "images/cleats.jpg" },
+      { title: "Football Boots 1980 Edition", price: "$249.99", img: "images/jersey2.jpeg" },
+      { title: "Retro Team Scarf", price: "$39.99", img: "images/muffler.jpeg" },
+      { title: "Signed Legend Player Card", price: "$129.99", img: "images/card.jpeg" },
+      { title: "Vintage Trophy Collection", price: "$449.99", img: "images/vintage trophy.jpeg" }
     ];
 
     let currentPage = 1;
@@ -260,8 +327,9 @@
           <div class="card">
             <img src="${p.img}" alt="${p.title}">
             <p class="card-title">${p.title}</p>
+            <p style="font-size: 12px; color: #ccc; margin: 5px 0;">AI Generated Image</p>
             <p class="price">${p.price}</p>
-            <p class="add-cart">Add To Cart</p>
+            <button class="add-cart">Add to Cart</button>
           </div>
         `;
       });
@@ -283,6 +351,21 @@
     }
 
     renderProducts();
+  </script>
+
+  <script>
+    // Highlight active nav link based on current page
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('nav a');
+      const currentPage = window.location.pathname.split('/').pop();
+      
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+          link.classList.add('active');
+        }
+      });
+    });
   </script>
 
 </body>

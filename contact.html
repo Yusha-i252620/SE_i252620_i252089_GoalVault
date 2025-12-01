@@ -27,7 +27,8 @@
       flex-wrap: wrap;
     }
     header img {
-      height: 80px;
+      width: 110px;
+      height: auto;
     }
     nav a {
       margin: 0 15px;
@@ -35,7 +36,7 @@
       font-size: 18px;
       color: gold;
     }
-    nav a:first-child {
+    nav a.active {
       color: white;
     }
     .search {
@@ -178,19 +179,20 @@
   <!-- Header -->
   <header>
     <div class="container">
-      <img src="logo.png" alt="GoalVault Logo" />
+      <img src="images/logo2.png" alt="GoalVault Logo" class="header-logo" />
       <nav>
-        <a href="#">Home</a>
-        <a href="#">Shop</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="Shop.html">Shop</a>
+        <a href="productlisting.html">Listing</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
       </nav>
       <div class="search">
         <input type="text" placeholder="Search Collectibles..." />
       </div>
       <div class="icons">
-        <button>🛒</button>
-        <button>👤</button>
+        <a href="shopcart.html"><button>🛒</button></a>
+        <a href="loginpage.html"><button>👤</button></a>
         <button>❤️</button>
       </div>
     </div>
@@ -199,15 +201,17 @@
   <!-- Contact Form -->
   <section class="contact">
     <h2>Contact Us - Query Form</h2>
-    <form>
-      <input type="text" placeholder="Name" required />
-      <input type="text" placeholder="Subject" required />
-      <textarea rows="5" placeholder="Message"></textarea>
-      <input type="email" placeholder="Email" required />
-      <input type="tel" placeholder="Phone No" />
-      <input type="text" placeholder="Location" />
+    <form id="contact-form">
+      <input type="text" id="c-name" placeholder="Name" required />
+      <input type="text" id="c-subject" placeholder="Subject" required />
+      <textarea id="c-message" rows="5" placeholder="Message"></textarea>
+      <input type="email" id="c-email" placeholder="Email" required />
+      <input type="tel" id="c-phone" placeholder="Phone No" />
+      <input type="text" id="c-location" placeholder="Location" />
       <button type="submit">Submit</button>
     </form>
+
+    <div id="form-feedback" aria-live="polite" style="color: #000; background: gold; padding:10px; border-radius:6px; display:none; max-width:600px; margin:12px auto; text-align:center;"></div>
 
     <!-- Contact Info -->
     <div class="contact-info">
@@ -259,10 +263,10 @@
       <div>
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Shop</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="Shop.html">Shop</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div>
@@ -285,6 +289,62 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Contact form validation: 3 alerts & 3 console.logs (project requirement)
+    (function() {
+      function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      const form = document.getElementById('contact-form');
+      const feedback = document.getElementById('form-feedback');
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('c-name').value || '';
+        const email = document.getElementById('c-email').value || '';
+        const message = document.getElementById('c-message').value || '';
+
+        if (!name.trim()) {
+          alert('Please enter your name');
+          console.log('Contact form validation: name missing');
+          return;
+        }
+
+        if (!validateEmail(email)) {
+          alert('Please enter a valid email address');
+          console.log('Contact form validation: invalid email');
+          return;
+        }
+
+        if (!message.trim()) {
+          alert('Please enter a message');
+          console.log('Contact form validation: message missing');
+          return;
+        }
+
+        // Success feedback (no additional alerts) — show inline message
+        feedback.textContent = `Thanks ${name}! Your message has been received.`;
+        feedback.style.display = 'block';
+        form.reset();
+      });
+    })();
+
+    // Highlight active nav link based on current page
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('nav a');
+      const currentPage = window.location.pathname.split('/').pop();
+      
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>

@@ -27,7 +27,8 @@
       flex-wrap: wrap;
     }
     header img {
-      height: 80px;
+      width: 110px;
+      height: auto;
     }
     nav a {
       margin: 0 15px;
@@ -39,7 +40,7 @@
     nav a:hover {
       color: white;
     }
-    nav a:first-child {
+    nav a.active {
       color: white;
     }
     .search {
@@ -163,23 +164,22 @@
   </style>
 </head>
 <body>
-
-  <!-- Header -->
   <header>
     <div class="container">
-      <img src="logo.png" alt="GoalVault Logo" />
+      <img src="images/logo2.png" alt="GoalVault Logo" class="header-logo" />
       <nav>
-        <a href="#">Home</a>
-        <a href="#">Shop</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="Shop.html">Shop</a>
+        <a href="productlisting.html">Listing</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
       </nav>
       <div class="search">
         <input type="text" placeholder="Search Collectibles..." />
       </div>
       <div class="icons">
-        <button>🛒</button>
-        <button>👤</button>
+        <a href="shopcart.html"><button>🛒</button></a>
+        <a href="loginpage.html"><button>👤</button></a>
         <button>❤️</button>
       </div>
     </div>
@@ -197,6 +197,13 @@
     </p>
     <p>
       Now, GoalVault is where football nostalgia meets the thrill of collecting. We're still arguing over who was the best striker ever, but at least now we can do it while browsing the coolest World Cup collectibles on the planet.
+    </p>
+
+    <!-- Milestones -->
+    <p>
+      <strong>Milestones:</strong>
+      <br>• 2022 — Launched GoalVault with our first 50 authenticated collectibles.
+      <br>• 2024 — Partnered with certified authenticators to expand our inventory.
     </p>
 
     <!-- Founders Image -->
@@ -220,10 +227,10 @@
       <div>
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Shop</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="Shop.html">Shop</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div>
@@ -246,6 +253,21 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Highlight active nav link based on current page
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('nav a');
+      const currentPage = window.location.pathname.split('/').pop();
+      
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
