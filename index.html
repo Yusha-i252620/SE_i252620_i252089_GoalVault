@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GoalVault</title>
+  <style>
+    /* Global styles */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(to bottom right, #3327a1, #5548c9, #6758f1);
+      color: white;
+    }
+
+    /* Header */
+    header {
+      background: #2a2086;
+      padding: 20px;
+      border-bottom: 4px solid gold;
+    }
+    header .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img {
+      height: 80px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 18px;
+      color: gold;
+    }
+    nav a:first-child {
+      color: white;
+    }
+
+    /* Search bar */
+    .search {
+      background: white;
+      border-radius: 50px;
+      padding: 10px 20px;
+      width: 250px;
+    }
+    .search input {
+      border: none;
+      outline: none;
+      width: 100%;
+    }
+
+    /* Icons */
+    .icons button {
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: gold;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    /* Hero section */
+    main {
+      text-align: center;
+      padding: 100px 20px;
+    }
+    main h1 {
+      color: gold;
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+    main p {
+      font-size: 20px;
+      max-width: 800px;
+      margin: 0 auto 40px;
+    }
+    .buttons button {
+      padding: 15px 30px;
+      border-radius: 10px;
+      font-size: 18px;
+      margin: 0 10px;
+      cursor: pointer;
+    }
+    .buttons .shop {
+      background: gold;
+      color: black;
+    }
+    .buttons .learn {
+      background: white;
+      color: black;
+    }
+
+    /* Footer */
+    footer {
+      background: #3327a1;
+      padding: 50px 20px;
+      border-top: 4px solid gold;
+      margin-top: 100px;
+    }
+    footer .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+    footer h3, footer h4 {
+      color: gold;
+      margin-bottom: 15px;
+    }
+    footer p, footer li, footer a {
+      color: white;
+      font-size: 16px;
+      text-decoration: none;
+    }
+    footer ul {
+      list-style: none;
+      padding: 0;
+    }
+    .social a {
+      font-size: 24px;
+      margin-right: 10px;
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <img src="logo.png" alt="GoalVault Logo" />
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+      <div class="search">
+        <input type="text" placeholder="Search Collectibles..." />
+      </div>
+      <div class="icons">
+        <button>🛒</button>
+        <button>👤</button>
+        <button>❤️</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <h1>Premium FIFA World Cup Collectibles</h1>
+    <p>
+      Own a piece of football history. Discover our exclusive collection of authenticated
+      World Cup memorabilia, trophies, and collectibles.
+    </p>
+    <div class="buttons">
+      <button class="shop">Shop Now</button>
+      <button class="learn">Learn More</button>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div>
+        <h3>GoalVault</h3>
+        <p>Buy A Piece Of Footballing History</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact Us</h4>
+        <ul>
+          <li>i252620@isb.nu.edu.pk</li>
+          <li>i252089@isb.nu.edu.pk</li>
+          <li>0332 9333641</li>
+          <li>0349 5013377</li>
+          <li>FAST University Islamabad</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <div class="social">
+          <a href="#">📷</a>
+          <a href="#">🐦</a>
+          <a href="#">📘</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
