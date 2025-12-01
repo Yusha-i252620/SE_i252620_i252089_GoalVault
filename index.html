@@ -94,6 +94,57 @@
       color: black;
     }
 
+    /* Featured Products */
+    .featured {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .featured h2 {
+      font-size: 36px;
+      color: gold;
+      margin-bottom: 40px;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .product {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    .product:hover {
+      transform: scale(1.03);
+    }
+    .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    .product h3 {
+      color: gold;
+      margin-bottom: 10px;
+    }
+    .product p {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+    .product button {
+      background: gold;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
     /* Footer */
     footer {
       background: #3327a1;
@@ -163,6 +214,31 @@
       <button class="learn">Learn More</button>
     </div>
   </main>
+
+  <!-- Featured Products -->
+  <section class="featured">
+    <h2>Featured Collectibles</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img src="images/muffler.jpeg" alt="Arsenal Muffler" />
+        <h3>Arsenal Fan Muffler</h3>
+        <p>Classic red-and-white scarf for true Gunners fans. Limited edition.</p>
+        <button>Buy Now</button>
+      </div>
+      <div class="product">
+        <img src="images/cleats.jpg" alt="Vintage Cleats" />
+        <h3>Vintage Match Cleats</h3>
+        <p>Authentic leather cleats from the golden era of football. Collector’s item.</p>
+        <button>Buy Now</button>
+      </div>
+      <div class="product">
+        <img src="images/card.jpeg" alt="Player Card" />
+        <h3>Legendary Player Card</h3>
+        <p>Framed action shot of a football icon. Perfect for display.</p>
+        <button>Buy Now</button>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer>
