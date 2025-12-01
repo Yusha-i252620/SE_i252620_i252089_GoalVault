@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoalVault – Login</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #3b2bb8; 
+      color: white;
+    }
+
+   
+    header {
+      background-color: #3b2bb8;
+      border-bottom: 4px solid #f7d000;
+      padding: 20px 50px;
+      display: flex;
+      justify content: space-between;
+     align-items : center;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style : none;
+	display: flex;
+	gap: 30px;
+    }
+
+    nav ul li a {
+      color:white;
+	text-decoration:none;
+	font-size: 16px;
+    }
+
+    .search-box {
+     background: white;
+	padding : 8px 15px;
+	border-radius: 20px;
+	width:250px;
+	border: none;
+	outline:none;
+	color:black;
+	
+    }
+
+
+    .login-container {
+      width: 360px;
+	background-color:#2f23a3;
+	padding:40px;
+	border-radius:12px;
+	border: 3px solid #1ca4e8;
+	text-align: center;
+    }
+
+    input {
+      width:90%;
+	padding:12px;
+	margin-top:15px;
+	border-radius:7px;
+	border:none;
+	outline:none;
+	font-size:16px;
+
+	
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 60px;
+      background-color: #f7d000;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+
+    }
+
+    button:hover {
+      opacity:0.9;
+    }
+
+     {
+      color: #f7d000;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+   
+    footer {
+      background-color: #3b2bb8;
+      padding: 40px 0;
+      border-top: 4px solid #f7d000;
+      margin-top: 80px;
+    }
+
+    footer .container {
+      width: 85%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    footer h3, footer h4 {
+      margin-bottom: 10px;
+    }
+
+    footer ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    footer ul li, footer a {
+      color: white;
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    .social a {
+      font-size: 28px;
+      margin-right: 10px;
+      text-decoration: none;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">GOALVAULT</div>
+
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <input type="text" class="search-box" placeholder="Search Collectibles...">
+  </header>
+
+  <!-- LOGIN BOX -->
+  <div class="login-container">
+    <h2>Welcome Back!</h2>
+    <p>Login to GoalVault</p>
+
+    <input type="email" id="email" placeholder="Email Address">
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="login()">Login</button>
+
+    <p><a href="#">Forgot Password?</a></p>
+    <p>Don't Have An Account? <a href="#">Sign Up</a></p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div>
+        <h3>GoalVault</h3>
+        <p>Buy A Piece Of Footballing History</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact Us</h4>
+        <ul>
+          <li>i252620@isb.nu.edu.pk</li>
+          <li>i252089@isb.nu.edu.pk</li>
+          <li>0332 9333641</li>
+          <li>0349 5013377</li>
+          <li>FAST University Islamabad</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Follow Us</h4>
+        <div class="social">
+          <a href="#">📷</a>
+          <a href="#">🐦</a>
+          <a href="#">📘</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LOGIN SCRIPT -->
+  <script>
+    function login() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      if (email === "" || password === "") {
+        alert("Please fill out all fields");
+        return;
+      }
+
+      alert("Logged in successfully (demo)");
+    }
+  </script>
+
+</body>
+</html>
